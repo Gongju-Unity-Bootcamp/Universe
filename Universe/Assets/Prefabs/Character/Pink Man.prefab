@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1409847227
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6056987297122131021, guid: d348dff3819df794186a80cb95777629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +197,7 @@ MonoBehaviour:
   _horizonSpeed: 4
   _vertiSpeed: 3
   _bulletSpeed: 500
-  _bulletPrefab: {fileID: 7962488523896907306, guid: a2a796ea146f53c419630f91d3d7272f, type: 3}
+  _bulletPrefab: {fileID: 6093191536467544630, guid: ab2bddb51049266469f3d20a6487cbf3, type: 3}
   _bulletPos: {fileID: 1634972004333454699}
 --- !u!1 &4287103520939889693
 GameObject:
