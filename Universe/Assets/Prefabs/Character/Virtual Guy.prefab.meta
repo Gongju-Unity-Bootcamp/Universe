@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Universe/Assets/DownlodeAssets/CosmicMan.meta
+guid: 87a1663e4d4dd504694a15ad611f69b4
+folderAsset: yes
+DefaultImporter:
+========
 guid: 4438d3a290dbdac47987d39d6bee13e0
 PrefabImporter:
+>>>>>>>> efa872956859ee5881ed20da3b670063f9fd0c61:Universe/Assets/Prefabs/Character/Virtual Guy.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
