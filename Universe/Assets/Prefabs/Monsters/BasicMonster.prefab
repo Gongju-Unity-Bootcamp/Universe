@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 104294318049801395}
   - component: {fileID: 2923987672933518790}
-  - component: {fileID: -5212289167730731634}
   - component: {fileID: 8722369611471806924}
   - component: {fileID: -6184142239249188972}
   - component: {fileID: 2962154817394667095}
+  - component: {fileID: 5884014223272741085}
   m_Layer: 0
   m_Name: BasicMonster
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 2104362705
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9d69ae98725365b4b94189120dc1b40a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5212289167730731634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752701260782132562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4b046c3be510743b05fa4dcaba08a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BasicMoster_Rigidbody: {fileID: 0}
 --- !u!95 &8722369611471806924
 Animator:
   serializedVersion: 5
@@ -178,7 +165,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0007864386, y: -0.023986459}
@@ -194,3 +181,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14269826, y: 0.11202708}
   m_EdgeRadius: 0
+--- !u!114 &5884014223272741085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752701260782132562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6777bf0731baea147bd1d0138a10db1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasicMoster_Rigidbody: {fileID: 0}

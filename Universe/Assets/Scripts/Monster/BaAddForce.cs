@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicMonster_Force : MonoBehaviour
+public class BaAddForce : MonoBehaviour
 {
     public Rigidbody2D BasicMoster_Rigidbody;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +21,3 @@ public class BasicMonster_Force : MonoBehaviour
 
     }
 }
-

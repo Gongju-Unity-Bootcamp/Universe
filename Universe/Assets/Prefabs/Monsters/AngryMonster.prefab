@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3625859716634720692}
   - component: {fileID: 5679734628702326129}
   - component: {fileID: 1504916065729083531}
+  - component: {fileID: 6866338238579573157}
   - component: {fileID: 414388159190797888}
-  - component: {fileID: 5094027220103768639}
   - component: {fileID: 5364060467279347371}
   - component: {fileID: -7229884197953683907}
   m_Layer: 0
@@ -88,9 +88,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 2104362705
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 9d69ae98725365b4b94189120dc1b40a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,6 +102,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6866338238579573157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979882756301850775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6777bf0731baea147bd1d0138a10db1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasicMoster_Rigidbody: {fileID: 0}
 --- !u!95 &414388159190797888
 Animator:
   serializedVersion: 5
@@ -123,19 +136,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5094027220103768639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8979882756301850775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4b046c3be510743b05fa4dcaba08a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BasicMoster_Rigidbody: {fileID: 0}
 --- !u!61 &5364060467279347371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00039321557, y: -0.02359324}
