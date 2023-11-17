@@ -1,0 +1,6 @@
+{
+  "maxScore": 0,
+  "playCnt": 0,
+  "getPlayer": [ "TRUE", "FALSE", "FALSE", "FALSE" ],
+  "killMonsterCnt": [0,0,0,0,0]
+}
