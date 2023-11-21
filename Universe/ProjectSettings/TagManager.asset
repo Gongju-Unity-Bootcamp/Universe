@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
+  - Item
+  - Exe
+  - PlayerBullet
+  - Destroy
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - Monster
+  - Wall
   - 
   - 
   - 
@@ -47,6 +51,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1409847227
+    locked: 0
+  - name: Item
+    uniqueID: 2525450355
     locked: 0
   - name: UI
     uniqueID: 2308355609

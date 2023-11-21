@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class DestroyBullet : MonoBehaviour
 {
+    const float _destroyDefaultTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        BulletDestroy(2f);
-    }
-
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
+        BulletDestroy(_destroyDefaultTime);
     }
 
     public void BulletDestroy(float time)

@@ -1,0 +1,39 @@
+[
+  {
+    "category": "Get Hp",
+    "level": 1,
+    "upgrade": 0.5,
+    "maxLevel": 4
+  },
+  {
+    "category": "Power Up",
+    "level": 1,
+    "upgrade": 0.5,
+    "maxLevel": 3
+  },
+  {
+    "category": "Increase Bullet Count",
+    "level": 1,
+    "upgrade": 1,
+    "maxLevel": 3
+  },
+  {
+    "category": "Speed Up",
+    "level": 1,
+    "upgrade": 0.1,
+    "maxLevel": 3
+  },
+  {
+    "category": "Upgrade Gun",
+    "level": 1,
+    "upgrade": 0.1,
+    "maxLevel": 3
+  },
+  {
+    "category": "Big Magnet",
+    "level": 1,
+    "upgrade": 0.1,
+    "maxLevel": 5
+  }
+
+]
