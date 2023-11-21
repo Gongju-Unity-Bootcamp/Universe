@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     readonly Vector2 _maxMovePos = new Vector2(2.3f, 3f);
 
 
-    //ÃÑ¾Ë ÇÁ¸®ÆÕ, “MÇÏ À§Ä¡
+    //ÃÑ¾Ë ÇÁ¸®ÆÕ, ¹ß»ç À§Ä¡
     public GameObject _bulletPrefab;
     public Transform _bulletPos;
 
@@ -53,6 +53,8 @@ public class PlayerMove : MonoBehaviour
 
     public GameObject _levelUpEffect;
 
+    private GameObject _collider;
+    
     private UpgradeUIManager _upgradeUIManager;
     private void Start()
     {
@@ -97,6 +99,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
+            _collider = collision.gameObject;
             PlayerAttacked(true);
         }
         if(collision.CompareTag("Exe"))
@@ -121,6 +124,21 @@ public class PlayerMove : MonoBehaviour
         {
             _collisionEffect.SetActive(true);
             SetAniParameters("Attacked");
+
+            int _monsterIndex = _collider.GetComponent<MonsterInfo>().GetMonsterIndex();
+            DataManager.instance.playerStatDataList[_playerIndex].hp
+                -= DataManager.instance.monsterDataList[_monsterIndex].str;
+            if (DataManager.instance.playerStatDataList[_playerIndex].hp <= 0)
+            {
+                _canMove = false;
+                DataManager.instance.playData.gameover = true;
+
+                SetAniParameters("Jumping");
+                Time.timeScale = 0.3f;
+
+                float _aniTime = _animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+                Destroy(gameObject, _aniTime);
+            }
 
         }
         else

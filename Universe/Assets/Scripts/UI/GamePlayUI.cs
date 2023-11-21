@@ -10,28 +10,37 @@ public class GamePlayUI : MonoBehaviour
     public GameObject _countFrame;
     public TMP_Text _countTx;
     public TMP_Text _scoreTx;
+    public GameObject _gameoverUI;
 
     //경험치
     public Slider _exeSlider;
     public TMP_Text _exeTx;
-    public MonsterSpawn _monsterSpawn;
+    private MonsterSpawn _monsterSpawn;
     private int _playerLevel;
     private int _currExe;
+    private int _playerIndex;
+    private bool _callGameover = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerPrefs.SetInt("Round", 1);
-        _scoreTx.text = PlayerPrefs.GetInt("Score").ToString();
+        _scoreTx.text = DataManager.instance.playData.score.ToString();
         _monsterSpawn = FindAnyObjectByType<MonsterSpawn>();
-
+        _playerIndex = PlayerPrefs.GetInt("PlayerIndex");
 
         StartCoroutine(nameof(CountAni));
     }
 
     private void Update()
     {
-        SliderManager();
+        if (!_callGameover)
+        {
+            UpdateScore();
+            SliderManager();
+            CheckGameOver();
+        }
     }
 
     IEnumerator CountAni()
@@ -50,6 +59,13 @@ public class GamePlayUI : MonoBehaviour
         _monsterSpawn.CallSpawn();
     }
 
+    //점수 업데이트
+    private void UpdateScore()
+    {
+        _scoreTx.text = DataManager.instance.playData.score.ToString();
+    }
+
+    //현재 경험치 슬라이드 업데이트
     private void SliderManager()
     {
         _playerLevel = DataManager.instance.playData.level;
@@ -66,5 +82,22 @@ public class GamePlayUI : MonoBehaviour
         {
             _exeSlider.value = 0;
         }
+    }
+
+    //게임 상태 확인
+    private void CheckGameOver()
+    {
+        if (DataManager.instance.playerStatDataList[_playerIndex].hp <= 0)
+        {
+            Invoke(nameof(ActiveGameOver), 1f);
+            _callGameover = true;
+        }
+    }
+
+    private void ActiveGameOver()
+    {
+        GameObject _cloneGameoverUI = Instantiate(_gameoverUI);
+        _cloneGameoverUI.GetComponent<Canvas>().worldCamera = Camera.main;
+        Destroy(gameObject);
     }
 }

@@ -2,7 +2,7 @@
   {
     "category": "Get Hp",
     "level": 1,
-    "upgrade": 0.5,
+    "upgrade": 1,
     "maxLevel": 4
   },
   {
@@ -32,7 +32,7 @@
   {
     "category": "Big Magnet",
     "level": 1,
-    "upgrade": 0.1,
+    "upgrade": 0.05,
     "maxLevel": 5
   }
 

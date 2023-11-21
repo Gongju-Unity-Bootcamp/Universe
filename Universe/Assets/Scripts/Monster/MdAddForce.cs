@@ -54,6 +54,11 @@ public class MdAddForce : MonoBehaviour
             _rigidbody.velocity = Vector2.zero;
             _checkStop = true;
         }
+
+        if (DataManager.instance.playData.gameover)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void bulletSpawn()
@@ -92,10 +97,12 @@ public class MdAddForce : MonoBehaviour
         {
             _isDie = true;
             gameObject.tag = "Destroy";
+            DataManager.instance.playData.score += 100 + _monsterIndex * 50;
+
             _animator.SetTrigger("Die");
             Instantiate(_exePrefab, transform.position, Quaternion.identity);
             //피격애니메이션 클립 실행 시간이 끝난 후 오브젝트 파괴
             Destroy(gameObject, 0.5f);
         }
     }
-}
+}                                   

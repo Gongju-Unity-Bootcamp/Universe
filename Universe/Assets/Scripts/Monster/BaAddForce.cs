@@ -34,6 +34,11 @@ public class BaAddForce : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (DataManager.instance.playData.gameover)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +69,7 @@ public class BaAddForce : MonoBehaviour
         else
         {
             _canMove = true;
+            DataManager.instance.playData.score += 100 + _monsterIndex * 50;
             gameObject.tag = "Destroy";
              
             _animator.SetTrigger("Die");
@@ -77,4 +83,5 @@ public class BaAddForce : MonoBehaviour
     {
         _canMove = true;
     }
+
 }

@@ -43,7 +43,16 @@ public class MonsterSpawn : MonoBehaviour
         CheckRound();
 
         _randomTime = Random.Range(0.1f, 2f);
-        Invoke(nameof(spawn), _randomTime);
+
+        //게임오버 상태라면 복제하지 않음
+        if (!DataManager.instance.playData.gameover)
+        { 
+            Invoke(nameof(spawn), _randomTime); 
+        }
+        else
+        {
+            CancelInvoke();
+        }
     }
 
     private void CheckRound()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,11 +18,13 @@ public class SelectPlayer : MonoBehaviour
     public List<Button> _selectPlayerBt;
 
     private ClonePlayer _clonePlayer;
-    public GameObject _playUI;   
+    public GameObject _playUI;
+    public TMP_Text _goldTx;
 
     private void Start()
     {
         _clonePlayer = FindObjectOfType<ClonePlayer>();
+        _goldTx.text = PlayerPrefs.GetInt("Gold").ToString();
     }
     private void Update()
     {

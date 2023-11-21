@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8617937285403522427}
   - component: {fileID: 7091938443732477979}
   - component: {fileID: 2609862774258485324}
+  - component: {fileID: 8799646162833546032}
   m_Layer: 0
   m_Name: Kiwi
   m_TagString: Item
@@ -142,7 +143,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.1
 --- !u!50 &2609862774258485324
 Rigidbody2D:
   serializedVersion: 4
@@ -170,3 +171,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8799646162833546032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4206127710930428496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1724ebfcfe266438cb6f39210c5dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

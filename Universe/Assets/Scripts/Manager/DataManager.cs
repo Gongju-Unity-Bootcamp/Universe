@@ -53,11 +53,10 @@ public class DataManager : MonoBehaviour
     }
 
     //데이터 세팅
-    private void LoadFromResourcesData()
+    public void LoadFromResourcesData()
     {
         /* 프리팹 목록
          * Gold : 골드 (저장필요)
-         * Score: 점수 (저장불필요) 
          * PlayerIndex: 선택한 캐릭터 (저장불필요)
          * Round : 라운드정보 (저장불필요)
          */
@@ -66,7 +65,6 @@ public class DataManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Gold", 0);
         }
-        PlayerPrefs.SetInt("Score", 0);
 
         //캐릭터 스탯 데이터
         TextAsset _playerdata = Resources.Load("PlayerStatData", typeof(TextAsset)) as TextAsset;
@@ -95,7 +93,6 @@ public class DataManager : MonoBehaviour
         roundDataList = JsonConvert.DeserializeObject<List<RoundData>>(_roundData.ToString());
 
     }
-
     //데이터 저장
     private void SaveData()
     {
@@ -103,7 +100,6 @@ public class DataManager : MonoBehaviour
         string _achieveData = JsonConvert.SerializeObject(achieveData);
         File.WriteAllText(Application.persistentDataPath + "/AchieveData.json", _achieveData);
 
-        PlayerPrefs.DeleteKey("Score");
         PlayerPrefs.DeleteKey("PlayerIndex");
     }
 
@@ -111,18 +107,19 @@ public class DataManager : MonoBehaviour
     {
         SaveData();
     }
+
 }
 
 #region PlayerStatData
 //캐릭터 스탯 데이터
 public class PlayerStatData
 {
-    public PlayerStatData(string _name, int _level, float _hp, float _speed, float _str, float _attackSpeed, float _bulletIndex) {
+    public PlayerStatData(string _name, int _level, int _hp, float _speed, float _str, float _attackSpeed, float _bulletIndex) {
         name = _name; level = _level; hp = _hp; speed = _speed; attackSpeed = _attackSpeed; bulletIndex = _bulletIndex;
     }
     public string name;
-    public int level;
-    public float hp, speed, str, attackSpeed, bulletIndex;
+    public int level, hp;
+    public float speed, str, attackSpeed, bulletIndex;
 }
 #endregion
 
@@ -134,12 +131,15 @@ public class PlayData
     {
 
     }
-    public PlayData(int _level,int _exe,int _bulletCnt, float _bulletSize)
+    public PlayData(int _level, int _exe, int _score, bool _gameover, int _round, int _bulletCnt, float _bulletSize)
     {
-        level = _level; exe = _exe; bulletCnt = _bulletCnt; bulletSize = _bulletSize;
+        level = _level; exe = _exe; score = _score; round = _round;
+        bulletCnt = _bulletCnt; bulletSize = _bulletSize;
+        gameover = _gameover;
     }
-    public int level,exe,bulletCnt;
+    public int level,exe,score, round,bulletCnt;
     public float bulletSize;
+    public bool gameover;
 }
 #endregion
 
@@ -157,12 +157,13 @@ public class AchieveData
 //몬스터 정보
 public class MonsterData
 {
-    public MonsterData(string _name, float _hp, float _str, float _speed, float _attackSpeed)
+    public MonsterData(string _name, float _hp, int _str, float _speed, float _attackSpeed)
     {
         name = _name; hp = _hp; str = _str; speed =_speed; attackSpeed = _attackSpeed;
     }
     public string name;
-    public float hp, str, speed,attackSpeed;
+    public float hp, speed,attackSpeed;
+    public int str;
 }
 #endregion
 
