@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaiscMonster : MonoBehaviour
 {
-    public int BasicMonsterCount = 50; // 50 -1씩 카운트 > 0가 되면 끝
+    public int BasicMonsterCount = 50; 
     //List를 이용해서 유니티 인스펙터창에 랜덤으로 넣을 프리팹 설정
     public List<GameObject> MonsterPrefabList = new List<GameObject>();
     private float randomX;

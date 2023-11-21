@@ -8,6 +8,7 @@ public class MdAddForce : MonoBehaviour
     //const float posY = 4;
     bool checkStop = false;
     private float randomY;
+    private float randomx;
     public GameObject bullet;
     public Transform bulletPos;
 
@@ -22,7 +23,7 @@ public class MdAddForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randomY = Random.Range(2, 5);
+        randomY = Random.Range(2.2f, 4.4f);
 
         if (checkStop == false)
         {
