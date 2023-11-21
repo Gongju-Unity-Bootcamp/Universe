@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BulletAddForce : MonoBehaviour
+public class MonsterBulletController : MonoBehaviour
 {
     private Rigidbody2D bulletRigidbody;
     public float speed = 0.7f;
@@ -23,7 +23,5 @@ public class BulletAddForce : MonoBehaviour
         // ¾Æ·¡·Î ¶³¾îÁö´Â ÃÑ¾Ë
         bulletRigidbody.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
         Destroy(bulletRigidbody, lifeTime);
-
-
     }
 }

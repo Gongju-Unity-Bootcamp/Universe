@@ -28,6 +28,12 @@
     "level": 1,
     "upgrade": 0.1,
     "maxLevel": 3
+  },
+  {
+    "category": "Big Magnet",
+    "level": 1,
+    "upgrade": 0.1,
+    "maxLevel": 5
   }
 
 ]

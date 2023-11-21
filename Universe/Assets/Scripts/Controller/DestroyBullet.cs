@@ -9,7 +9,6 @@ public class DestroyBullet : MonoBehaviour
     void Start()
     {
         BulletDestroy(_destroyDefaultTime);
-        BulletController _bulletController = new BulletController();
     }
 
     public void BulletDestroy(float time)
