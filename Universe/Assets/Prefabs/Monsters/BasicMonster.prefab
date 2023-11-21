@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5884014223272741085}
   m_Layer: 0
   m_Name: BasicMonster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,4 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6777bf0731baea147bd1d0138a10db1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicMoster_Rigidbody: {fileID: 0}
+  _monsterIndex: 0
+  _exePrefab: {fileID: 18177937862581472, guid: 93cad4c52211cdc42abd58bbc8de1182, type: 3}

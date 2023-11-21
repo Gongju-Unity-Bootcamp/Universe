@@ -1,0 +1,23 @@
+[
+  {
+    "round": 1,
+    "monsterCount": [ 25, 0, 0, 0, 0 ]
+  },
+  {
+    "round": 2,
+    "monsterCount": [ 20, 15, 0, 0, 0 ]
+  },
+  {
+    "round": 3,
+    "monsterCount": [ 15, 30, 3, 0, 0 ]
+  },
+  {
+    "round": 4,
+    "monsterCount": [ 20, 35, 0, 5, 0 ]
+  },
+  {
+    "round": 5,
+    "monsterCount": [ 0, 0, 0, 0, 1 ]
+  }
+
+]

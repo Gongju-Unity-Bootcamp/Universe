@@ -12,10 +12,11 @@ public class DataManager : MonoBehaviour
     public static DataManager instance = null;
 
     public List<PlayerStatData> playerStatDataList;
-    public BulletData bulletData;
+    public PlayData playData;
     public AchieveData achieveData;
     public List<MonsterData> monsterDataList;
     public List<UpgradeData> upgradeDataList;
+    public List<RoundData> roundDataList;
 
     private void Awake()
     {
@@ -29,14 +30,12 @@ public class DataManager : MonoBehaviour
 
         //리스트 할당
         playerStatDataList = new List<PlayerStatData>();
-        bulletData = new BulletData();
+        playData = new PlayData();
         achieveData = new AchieveData();
         monsterDataList = new List<MonsterData>();
         upgradeDataList = new List<UpgradeData>();
-    }
+        roundDataList = new List<RoundData>();
 
-    private void Start()
-    {
         LoadFromResourcesData();
     }
     
@@ -56,6 +55,12 @@ public class DataManager : MonoBehaviour
     //데이터 세팅
     private void LoadFromResourcesData()
     {
+        /* 프리팹 목록
+         * Gold : 골드 (저장필요)
+         * Score: 점수 (저장불필요) 
+         * PlayerIndex: 선택한 캐릭터 (저장불필요)
+         * Round : 라운드정보 (저장불필요)
+         */
         //골드와 점수는 프리팹으로 저장
         if (!PlayerPrefs.HasKey("Gold"))
         {
@@ -68,8 +73,8 @@ public class DataManager : MonoBehaviour
         playerStatDataList = JsonConvert.DeserializeObject<List<PlayerStatData>>(_playerdata.ToString());
 
         //총알 데이터
-        TextAsset _bulletdata = Resources.Load("BulletData", typeof(TextAsset)) as TextAsset;
-        bulletData = JsonConvert.DeserializeObject<BulletData>(_bulletdata.ToString());
+        TextAsset _playdata = Resources.Load("PlayData", typeof(TextAsset)) as TextAsset;
+        playData = JsonConvert.DeserializeObject<PlayData>(_playdata.ToString());
 
         //업적 데이터
         TextAsset _achievedata = Resources.Load("AchieveData", typeof(TextAsset)) as TextAsset;
@@ -83,6 +88,11 @@ public class DataManager : MonoBehaviour
         //업그레이드 데이터
         TextAsset _upgradedata = Resources.Load("UpgradeData", typeof(TextAsset)) as TextAsset;
         upgradeDataList = JsonConvert.DeserializeObject<List<UpgradeData>>(_upgradedata.ToString());
+
+
+        //라운드 데이터
+        TextAsset _roundData = Resources.Load("RoundData", typeof(TextAsset)) as TextAsset;
+        roundDataList = JsonConvert.DeserializeObject<List<RoundData>>(_roundData.ToString());
 
     }
 
@@ -116,11 +126,19 @@ public class PlayerStatData
 }
 #endregion
 
-#region BulletData
+#region PlayData
 //총알 데이터
-public class BulletData
+public class PlayData
 {
-    public int bulletCnt;
+    public PlayData()
+    {
+
+    }
+    public PlayData(int _level,int _exe,int _bulletCnt, float _bulletSize)
+    {
+        level = _level; exe = _exe; bulletCnt = _bulletCnt; bulletSize = _bulletSize;
+    }
+    public int level,exe,bulletCnt;
     public float bulletSize;
 }
 #endregion
@@ -148,6 +166,8 @@ public class MonsterData
 }
 #endregion
 
+#region UpgradeData
+//업그레이드 정보
 public class UpgradeData
 {
     public UpgradeData(string _category, int _level, float _upgrade, int _maxLevel) {
@@ -157,3 +177,15 @@ public class UpgradeData
     public int level, maxLevel;
     public float upgrade;
 }
+#endregion
+
+#region RoundData
+public class RoundData {
+    public RoundData(int _round, int[] _monsterCount)
+    {
+        round = _round; monsterCount = _monsterCount;
+    }
+    public int round;
+    public int[] monsterCount;
+}
+#endregion

@@ -7,6 +7,8 @@ TagManager:
   - Monster
   - Item
   - Exe
+  - PlayerBullet
+  - Destroy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Wall
   - 
   - 
   - 
