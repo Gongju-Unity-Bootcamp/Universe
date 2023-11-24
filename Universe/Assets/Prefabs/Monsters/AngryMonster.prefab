@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3625859716634720692}
   - component: {fileID: 1504916065729083531}
-  - component: {fileID: 6866338238579573157}
   - component: {fileID: 414388159190797888}
   - component: {fileID: 5364060467279347371}
   - component: {fileID: -7229884197953683907}
+  - component: {fileID: 505890359249961130}
+  - component: {fileID: 247837859277707077}
   m_Layer: 0
   m_Name: AngryMonster
   m_TagString: Monster
@@ -88,20 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6866338238579573157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8979882756301850775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6777bf0731baea147bd1d0138a10db1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monsterIndex: 1
-  _exePrefab: {fileID: 5340264537597075935, guid: 8fb6d3c16eecee4458fff2bd7a11c345, type: 3}
 --- !u!95 &414388159190797888
 Animator:
   serializedVersion: 5
@@ -195,3 +182,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &505890359249961130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979882756301850775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994aa65db5146df4faf19d31ef7b83d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterIndex: 1
+--- !u!114 &247837859277707077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979882756301850775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1082dde256e5274d9a82294073d40df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterIndex: 1
+  _exePrefab: {fileID: 5340264537597075935, guid: 8fb6d3c16eecee4458fff2bd7a11c345, type: 3}

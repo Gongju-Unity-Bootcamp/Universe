@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8722369611471806924}
   - component: {fileID: -6184142239249188972}
   - component: {fileID: 2962154817394667095}
-  - component: {fileID: 5884014223272741085}
+  - component: {fileID: 5804508484035614442}
+  - component: {fileID: 4060350690784915143}
   m_Layer: 0
   m_Name: BasicMonster
   m_TagString: Monster
@@ -181,7 +182,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14269826, y: 0.11202708}
   m_EdgeRadius: 0
---- !u!114 &5884014223272741085
+--- !u!114 &5804508484035614442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +191,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 752701260782132562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6777bf0731baea147bd1d0138a10db1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 994aa65db5146df4faf19d31ef7b83d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterIndex: 0
+--- !u!114 &4060350690784915143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752701260782132562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1082dde256e5274d9a82294073d40df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterIndex: 0

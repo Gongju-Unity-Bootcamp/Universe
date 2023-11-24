@@ -1,39 +1,47 @@
 [
     {
       "name": "Pink Man",
-      "level": "1",
-      "hp": "4",
-      "speed": "1.5",
-      "str": "1",
-      "attackSpeed": "2",
-      "bulletIndex": "4"
+      "level": 1,
+      "hp": 4,
+      "maxHp": 4,
+      "speed": 1.5,
+      "str": 1,
+      "attackSpeed": 2,
+      "bulletIndex": 4,
+      "gold" : 0
     },
     {
       "name": "Mask Dude",
-      "level": "1",
-      "hp": "5.5",
-      "speed": "1",
-      "str": "3",
-      "attackSpeed": "1.5",
-      "bulletIndex": "3"
+      "level": 1,
+      "hp": 6,
+      "maxHp": 6,
+      "speed": 1,
+      "str": 3,
+      "attackSpeed": 1.5,
+      "bulletIndex": 3,
+      "gold": 1500
     },
     {
       "name": "Ninja Frog",
-      "level": "1",
-      "hp": "4.5",
-      "speed": "2",
-      "str": "2",
-      "attackSpeed": "2.5",
-      "bulletIndex": "2"
+      "level": 1,
+      "hp": 5,
+      "maxHp": 5,
+      "speed": 2,
+      "str": 2,
+      "attackSpeed": 2.5,
+      "bulletIndex": 2,
+      "gold": 1500
     },
     {
       "name": "Virtual Guy",
-      "level": "1",
-      "hp": "4",
-      "speed": "3",
-      "str": "1",
-      "attackSpeed": "4",
-      "bulletIndex": "6"
+      "level": 1,
+      "hp": 4,
+      "maxHp": 4,
+      "speed": 3,
+      "str": 1,
+      "attackSpeed": 4,
+      "bulletIndex": 6,
+      "gold": 3500
     }
 ]
 

@@ -34,14 +34,6 @@ public class UpgradeSkillUI : MonoBehaviour
         _clickBt = -1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-    
-
     public void RandomSKillSet()
     {
         for(int i =0; i< _skillIndex.Length; i++)
@@ -86,7 +78,7 @@ public class UpgradeSkillUI : MonoBehaviour
         {
             case 0:
                 DataManager.instance.playerStatDataList[PlayerPrefs.GetInt("PlayerIndex")].hp
-                    += DataManager.instance.upgradeDataList[0].upgrade;
+                    += (int)DataManager.instance.upgradeDataList[0].upgrade;
                 break;
             case 1:
                 DataManager.instance.playerStatDataList[PlayerPrefs.GetInt("PlayerIndex")].str
@@ -103,6 +95,11 @@ public class UpgradeSkillUI : MonoBehaviour
                 DataManager.instance.playerStatDataList[PlayerPrefs.GetInt("PlayerIndex")].attackSpeed
                     += DataManager.instance.upgradeDataList[4].upgrade;
                 break;
+            case 5:
+                DataManager.instance.playData.bulletSize += DataManager.instance.upgradeDataList[5].upgrade;
+                break;
+
+            default: break;
         }
 
 
