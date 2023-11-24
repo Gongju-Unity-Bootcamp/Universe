@@ -6,7 +6,7 @@ using UnityEngine;
 public class TitleUI : MonoBehaviour
 {
     public GameObject _selectPlayerUI;
-    // Update is called once per frame
+
     void Update()
     {
         //아무키나 입력받았을 경우 오브젝트 비활성화
@@ -14,7 +14,9 @@ public class TitleUI : MonoBehaviour
         if(Input.anyKeyDown)
         {
             GameObject _selectUI = Instantiate(_selectPlayerUI);
+            _selectUI.GetComponent<SelectPlayer>().InitScreen();
             _selectUI.GetComponent<Canvas>().worldCamera = Camera.main;
+            _selectUI.SetActive(true);
             gameObject.SetActive(false);
         }
     }

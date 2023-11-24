@@ -70,7 +70,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //변경된 플레이어의 정보를 호출
         UpdateInfo();
+        
+        //이동, 공격
         if (_canMove)
         {
             Move();
@@ -113,6 +116,7 @@ public class PlayerMove : MonoBehaviour
         {
             PlayerAttacked(false);
         }
+        _collider = null;
     }
     #endregion
 
@@ -120,9 +124,12 @@ public class PlayerMove : MonoBehaviour
     private void PlayerAttacked(bool isCollision)
     {
         _isCollision = isCollision;
-        if (isCollision)
+        //충돌했을 경우 
+        if (isCollision&& _collider != null)
         {
+            //충돌 이펙트 
             _collisionEffect.SetActive(true);
+            //충돌 애니메이션
             SetAniParameters("Attacked");
 
             int _monsterIndex = _collider.GetComponent<MonsterInfo>().GetMonsterIndex();
@@ -143,6 +150,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            _isCollision =false;
             _currCollistionTime = 0f;
         }
     }
@@ -169,7 +177,7 @@ public class PlayerMove : MonoBehaviour
         //이동 중이라면 걷기 애니메이션 출력
         if (_inputHorizontal != 0 || _inputVertical != 0)
         {
-            SetAniParameters("Walking", _inputHorizontal != 0 ? (int)_inputVertical : (int)_inputHorizontal);
+            SetAniParameters("Walking", _inputHorizontal == 0 ? (int)_inputVertical : (int)_inputHorizontal);
             //좌우이동 시 스프라이트 flipX를 이용하여 뒤집기
             if (_inputHorizontal >= 1)
             {
@@ -222,6 +230,7 @@ public class PlayerMove : MonoBehaviour
         _canMove = true;
     }
 
+    //캐릭터의 고유 스탯 불러오기
     private void UpdateInfo()
     {
         //키입력정보
@@ -236,6 +245,7 @@ public class PlayerMove : MonoBehaviour
         _bulletCnt = DataManager.instance.playData.bulletCnt;
     }
 
+    //플레이어 레벨 관리
     private void LevelManager()
     {
         int _exe = DataManager.instance.playData.exe;

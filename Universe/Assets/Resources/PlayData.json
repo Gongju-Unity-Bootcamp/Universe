@@ -2,6 +2,7 @@
   "level": 1,
   "exe": 0,
   "score": 0,
+  "round": 1,
   "gameover" : false,
   "bulletSize": 0,
   "bulletCnt": 1

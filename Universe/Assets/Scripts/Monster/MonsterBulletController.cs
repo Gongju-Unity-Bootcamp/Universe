@@ -16,11 +16,9 @@ public class MonsterBulletController : MonoBehaviour
         bulletRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        // 아래로 떨어지는 총알
+        // 총알을 아래로 발사
         bulletRigidbody.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
         Destroy(bulletRigidbody, lifeTime);
     }

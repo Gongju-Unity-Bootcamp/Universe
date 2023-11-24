@@ -319,7 +319,7 @@ MonoBehaviour:
   _bulletPos: {fileID: 1634972004333454699}
   _collisionEffect: {fileID: 1895897661941531465}
   _bulletCnt: 0
-  _levelUpEffect: {fileID: 1936063426971408221}
+  _levelUpEffect: {fileID: 6055800539453929692}
 --- !u!1 &4287103520939889693
 GameObject:
   m_ObjectHideFlags: 0

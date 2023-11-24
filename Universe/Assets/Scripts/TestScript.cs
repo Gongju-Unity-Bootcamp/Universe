@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+    string? _test1;
+    string test1;
     // Start is called before the first frame update
     void Start()
     {
-
-        Debug.Log("원래 데이터: "+ DataManager.instance.playerStatDataList[0].str);
-
-        DataManager.instance.playerStatDataList[0].str = 15;
-        Debug.Log("수정 데이터: "+ DataManager.instance.playerStatDataList[0].str);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+
 }

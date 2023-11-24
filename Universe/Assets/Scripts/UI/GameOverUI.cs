@@ -16,7 +16,7 @@ public class GameOverUI : MonoBehaviour
 
     private int _score;
     private int _gold;
-
+    private bool _speedUp = false;
     private readonly Vector3 _textScale = new Vector3(1.1f, 1.1f, 1.1f);
 
     private void Start()
@@ -25,6 +25,8 @@ public class GameOverUI : MonoBehaviour
 
         _scoreText.text = 0.ToString();
         _goldText.text = 0.ToString();
+
+        DataManager.instance.achieveData.playCnt++;
         StartCoroutine(nameof(GameOverTextEffect));
         StartCoroutine(nameof(ScoreToGold));
     }
@@ -43,39 +45,40 @@ public class GameOverUI : MonoBehaviour
 
     public void ClickReplayBt()
     {
+        if(_score> 0) { _speedUp  = true; }
+
         GameObject _clone = Instantiate(_selectPlayerUI);
         _clone.GetComponent<Canvas>().worldCamera = Camera.main;
-        DataManager.instance.LoadFromResourcesData();
-
+        _clone.GetComponent<SelectPlayer>().InitScreen();
+        _clone.SetActive(true);
+        DataManager.instance.ReplayGame();
         Destroy(gameObject);
+
     }
 
     IEnumerator ScoreToGold()
     {
         _score = DataManager.instance.playData.score;
-
+        PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + _score / 50);
         while (_score > 0)
         {
             _score -= 50;
-            _gold += 5;
-
+            _gold += 1;
             _scoreText.text = _score.ToString();
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(0.01f);
             _goldText.text = _gold.ToString();
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         if(DataManager.instance.playData.score > DataManager.instance.achieveData.maxScore)
         {
             DataManager.instance.achieveData.maxScore = DataManager.instance.playData.score;
         }
-        PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") + _gold);
         _replayBt.gameObject.SetActive(true);
     }
 
     private void Reset()
     {
         PlayerPrefs.DeleteKey("PlayerIndex");
-
     }
 }

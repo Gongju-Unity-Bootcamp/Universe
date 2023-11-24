@@ -12,7 +12,6 @@ public class HpController : MonoBehaviour
     private void Update()
     {
         _playerHp = DataManager.instance.playerStatDataList[PlayerPrefs.GetInt("PlayerIndex")].hp;
-
         if(_prePlayerHp != _playerHp)
         {
             ReloadHp();
